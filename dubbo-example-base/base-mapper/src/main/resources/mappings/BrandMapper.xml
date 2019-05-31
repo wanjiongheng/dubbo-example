@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netopstec.linyi.dubbo.example.base.mapper.BrandMapper">
+    <resultMap id="tableConvertEntity" type="com.netopstec.linyi.dubbo.example.base.entity.Brand">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="storeUrl" column="store_url"/>
+        <result property="memo" column="memo"/>
+        <result property="createTime" column="create_time"/>
+        <result property="createUser" column="create_user"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="updateUser" column="update_user"/>
+        <result property="deleteTime" column="delete_time"/>
+        <result property="isDelete" column="is_delete"/>
+    </resultMap>
+    <sql id="brand_columns">
+        id, name, store_url, memo, create_time, create_user,
+        update_time, update_user, delete_time, is_delete
+    </sql>
+    <select id="selectOneById" parameterType="long" resultMap="tableConvertEntity">
+        select
+        <include refid="brand_columns"/>
+        from brand
+        where id = #{id}
+    </select>
+    <select id="selectAll" resultMap="tableConvertEntity">
+        select
+        <include refid="brand_columns"/>
+        from brand
+    </select>
+</mapper>

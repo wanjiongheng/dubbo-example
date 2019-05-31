@@ -1,0 +1,1 @@
+identityFilter=com.netopstec.linyi.dubbo.example.base.provider.filter.IdentityFilter
