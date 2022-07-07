@@ -26,7 +26,7 @@
             UTF-8
         </project.build.sourceEncoding>
         <!--spring版本-->
-        <spring.version>5.1.5.RELEASE</spring.version>
+        <spring.version>5.2.21.RELEASE</spring.version>
 
 
         <!--dubbo 2.8.3-->
